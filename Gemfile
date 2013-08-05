@@ -32,7 +32,12 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :test, :development do
+  gem 'pry-rails'
+end
+
 group :test do
+  gem 'database_cleaner'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'launchy'
