@@ -1,5 +1,8 @@
 Gallery::Application.routes.draw do
 
+  resources :supports
+
+
   devise_for :users
 
   resources :albums do
