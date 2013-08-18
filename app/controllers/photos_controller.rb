@@ -1,5 +1,8 @@
 class PhotosController < ApplicationController
 
+
+  load_and_authorize_resource
+
   def new
     @album = Album.find params[:album_id]
     @photo = Photo.new

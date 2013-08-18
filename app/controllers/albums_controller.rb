@@ -1,16 +1,20 @@
 class AlbumsController < ApplicationController
   before_action :set_album, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authenticate_user!
+
+  load_and_authorize_resource
+
   # GET /albums
   # GET /albums.json
   def index
-    @albums = Album.all
+    @albums = current_user.albums
   end
 
 
   # GET /albums/new
   def new
-    @album = Album.new
+    @album = Album.new #current_user.albums.build
   end
 
   # GET /albums/1/edit
@@ -64,7 +68,7 @@ class AlbumsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_album
-      @album = Album.find(params[:id])
+      @album ||= Album.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -11,3 +11,16 @@
  *= require_self
  *= require_tree .
  */
+
+.alert {
+  color: white;
+  background: red;
+  padding: 5px;
+}
+
+.notice {
+  color: white;
+  background: green;
+  padding: 5px;
+}
+

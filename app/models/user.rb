@@ -7,4 +7,9 @@ class User < ActiveRecord::Base
 
   has_many :albums
 
+
+  def admin?
+    false
+  end
+
 end
