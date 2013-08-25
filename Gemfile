@@ -54,4 +54,7 @@ gem 'simple_form'
 gem 'therubyracer'
 gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails'
 gem 'less-rails'
+gem 'sidekiq'
+gem 'sinatra'
+gem 'slim'
 
