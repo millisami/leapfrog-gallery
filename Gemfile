@@ -51,6 +51,7 @@ gem 'rmagick'
 gem 'simple_form'
 
 # Asset Pipeline
+gem 'therubyracer'
 gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails'
-
+gem 'less-rails'
 
