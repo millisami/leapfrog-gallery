@@ -48,14 +48,9 @@ gem 'devise'
 gem 'carrierwave'
 gem 'rmagick'
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'simple_form'
 
-# Use unicorn as the app server
-# gem 'unicorn'
+# Asset Pipeline
+gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails'
 
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
