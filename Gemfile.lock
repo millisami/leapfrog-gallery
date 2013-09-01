@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/millisami/store-engine.git
-  revision: bf4a2b27c252877137afa9a7dfe820064d13f65f
+  revision: a67e5409dfa6454a7e60f15a0721282402fb7134
   specs:
     store (0.0.1)
       rails (~> 4.0.0)
