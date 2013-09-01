@@ -58,3 +58,4 @@ gem 'sidekiq'
 gem 'sinatra'
 gem 'slim'
 
+gem 'store', github: 'millisami/store-engine'

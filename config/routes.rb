@@ -16,4 +16,6 @@ Gallery::Application.routes.draw do
   root 'albums#index'
 
   mount Sidekiq::Web, at: '/sidekiq'
+  mount Store::Engine, at: 'catalog'
+
 end
