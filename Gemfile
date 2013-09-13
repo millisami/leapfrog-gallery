@@ -60,4 +60,4 @@ gem 'slim'
 
 # gem 'store', path: '../store'
 gem 'store', github: 'millisami/store-engine'
-
+gem 'capistrano'
