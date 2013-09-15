@@ -32,6 +32,11 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :development do
+  gem 'capistrano'
+  gem 'rvm-capistrano'
+end
+
 group :test, :development do
   gem 'pry-rails'
   gem 'quiet_assets'
@@ -60,5 +65,3 @@ gem 'slim'
 
 # gem 'store', path: '../store'
 gem 'store', github: 'millisami/store-engine'
-gem 'capistrano'
-gem 'rvm-capistrano'

@@ -1,6 +1,7 @@
-require "bundler/capistrano"
+require 'bundler/capistrano'
+require "rvm/capistrano"
 
-server "ip-address-or-domain", :web, :app, :db, primary: true
+server "33.33.33.10", :web, :app, :db, primary: true
 
 set :application, "gallery"
 set :user, "deployer"
@@ -9,13 +10,21 @@ set :deploy_via, :remote_cache
 set :use_sudo, false
 
 set :scm, "git"
-set :repository, "git@github.com:millisami/#{application}.git"
+set :repository, "git@github.com:millisami/leapfrog-#{application}.git"
 set :branch, "master"
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
+set :rails_env, "production"
+
+set :rvm_ruby_string, 'ruby-2.0.0-p247'
+set :rvm_autolibs_flag, 'read-only'
+before 'deploy:setup', 'rvm:install_rvm'
+before 'deploy:setup', 'rvm:install_ruby'
+
+after 'deploy:update_code', 'deploy:migrate'
 
 namespace :deploy do
   %w[start stop restart].each do |command|
@@ -48,4 +57,7 @@ namespace :deploy do
     end
   end
   before "deploy", "deploy:check_revision"
+  after "deploy", "deploy:symlink_config_files"
+  after "deploy", "deploy:restart"
+  after "deploy", "deploy:cleanup"
 end
